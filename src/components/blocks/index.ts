@@ -1,7 +1,8 @@
+import React from 'react'
 import { blockRegistry } from '@/lib/blocks/registry'
 import { Section } from '@/types/section'
 
-export function renderBlock(section: Section) {
+export function renderBlock(section: Section): React.ReactElement | null {
     const Block = blockRegistry[section.block_type]
 
     if (!Block) {
@@ -9,5 +10,5 @@ export function renderBlock(section: Section) {
         return null
     }
 
-    return Block({ config: section.config })
+    return React.createElement(Block, { config: section.config })
 }

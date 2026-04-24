@@ -1,3 +1,4 @@
+import React from 'react'
 import { Section } from '@/types/section'
 import HeroBlock from '@/components/blocks/HeroBlock'
 import LogoListBlock from '@/components/blocks/LogoListBlock'
