@@ -1,6 +1,10 @@
 export type HeroBlockConfig = {
-    heading: string
-    subheading: string
+    use_logo?: boolean
+    heading?: string
+    subheading?: string
+    background_image?: string
+    background_color?: string
+    min_height?: string
 }
 
 export type RichTextBlockConfig = {

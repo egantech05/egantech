@@ -8,8 +8,9 @@ export default function Home() {
     <>
       <HeroBlock
         config={{
-          heading: 'Egantech',
+          use_logo: true,
           subheading: 'shaping the future',
+          min_height: '800px',
         }}
       />
       <LogoListBlock
