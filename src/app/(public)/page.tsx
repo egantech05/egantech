@@ -3,6 +3,7 @@ import LogoListBlock from '@/components/blocks/LogoListBlock'
 import PillsBlock from '@/components/blocks/PillsBlock'
 import CardGridBlock from '@/components/blocks/CardGridBlock'
 import { createServerClient } from '@/lib/supabase/server'
+import Link from 'next/link'
 
 export default async function Home() {
   const supabase = createServerClient()
@@ -32,10 +33,12 @@ export default async function Home() {
           min_height: '500px',
         }}
       />
-      <LogoListBlock
-        config={{ title: '' }}
-        technologies={technologies ?? []}
-      />
+      <div className='bg-gray-500'>
+        <LogoListBlock
+          config={{ title: '' }}
+          technologies={technologies ?? []}
+        />
+      </div>
       <PillsBlock
         config={{ title: 'Topics' }}
         tags={allTags}
@@ -44,6 +47,14 @@ export default async function Home() {
         config={{ count: 3 }}
         posts={posts ?? []}
       />
+      <div className="max-w-5xl mx-auto px-6 pb-16 flex justify-center">
+        <Link
+          href="/projects"
+          className="px-6 py-2 border border-gray-200 text-sm text-gray-600 rounded-lg hover:border-gray-900 hover:text-gray-900 transition-colors"
+        >
+          View more
+        </Link>
+      </div>
     </>
   )
 }

@@ -72,9 +72,7 @@ export default function ProjectsPage() {
 
     return (
         <>
-            <div className="max-w-5xl mx-auto px-6 pt-12 pb-4">
-                <h1 className="text-3xl font-bold tracking-tight">Projects</h1>
-            </div>
+
 
             <LogoListBlock
                 config={{ title: '' }}

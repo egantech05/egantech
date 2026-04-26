@@ -20,7 +20,7 @@ export default function LogoListBlock({
     const isInteractive = !!onTechClick
 
     return (
-        <section className="w-full py-8 px-6 border-b border-gray-100">
+        <section className="w-full py-8 px-6 ">
             <div className="max-w-5xl mx-auto">
                 {title && (
                     <p className="text-sm text-gray-500 mb-4">{title}</p>
@@ -46,16 +46,16 @@ export default function LogoListBlock({
                                     width={32}
                                     height={32}
                                     className={`object-contain transition-all ${isInteractive && selectedTechs.includes(tech.id)
-                                            ? 'grayscale-0'
-                                            : isInteractive
-                                                ? 'grayscale hover:grayscale-0'
-                                                : 'grayscale'
+                                        ? 'grayscale-0'
+                                        : isInteractive
+                                            ? 'grayscale hover:grayscale-0'
+                                            : 'grayscale'
                                         }`}
                                 />
                             ) : (
                                 <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium transition-colors ${isInteractive && selectedTechs.includes(tech.id)
-                                        ? 'bg-gray-900 text-white'
-                                        : 'bg-gray-200 text-gray-500'
+                                    ? 'bg-gray-900 text-white'
+                                    : 'bg-gray-200 text-gray-500'
                                     }`}>
                                     {tech.name.charAt(0).toUpperCase()}
                                 </div>
