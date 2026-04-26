@@ -28,7 +28,7 @@ export default async function Home() {
       <HeroBlock
         config={{
           use_logo: true,
-          subheading: 'shaping the future',
+          subheading: 'Developer . Innovator . Explorer',
           min_height: '500px',
         }}
       />

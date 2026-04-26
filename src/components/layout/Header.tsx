@@ -1,20 +1,27 @@
 import Link from 'next/link'
 import Logo from '@/components/ui/EgantechLogo'
-import EgantechLogo from '@/components/ui/EgantechLogo'
+import EganIcon from '@/components/ui/icons/EganIcon'
+import ProjectIcon from '@/components/ui/icons/ProjectIcon'
 
 export default function Header() {
     return (
         <header className="w-full border-b border-gray-100">
             <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-                <Link href="/" className="font-bold text-lg tracking-tight">
-                    <EgantechLogo className="h-5 w-auto text-black" />
+                <Link href="/">
+                    <Logo className="h-5 w-auto text-black" />
                 </Link>
-                <nav className="flex item-center gap-6">
-                    <Link href="/" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                        Home
+                <nav className="flex items-center gap-3">
+                    <Link
+                        href="/"
+                        className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-gray-900 hover:border-gray-900 transition-colors"
+                    >
+                        <EganIcon className="h-5 w-auto" />
                     </Link>
-                    <Link href="/projects" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                        Projects
+                    <Link
+                        href="/projects"
+                        className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-gray-900 hover:border-gray-900 transition-colors"
+                    >
+                        <ProjectIcon className="h-5 w-auto" />
                     </Link>
                 </nav>
             </div>
