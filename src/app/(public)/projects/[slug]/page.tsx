@@ -1,18 +1,44 @@
 import { createServerClient } from '@/lib/supabase/server'
 import { renderBlock } from '@/components/blocks'
 import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
 
 type Props = {
-    params: { slug: string }
+    params: Promise<{ slug: string }>
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { slug } = await params
+    const supabase = createServerClient()
+
+    const { data: post } = await supabase
+        .from('posts')
+        .select('title, caption, cover_image')
+        .eq('slug', slug)
+        .eq('status', 'published')
+        .single()
+
+    if (!post) return {}
+
+    return {
+        title: `${post.title} | gantech`,
+        description: post.caption ?? undefined,
+        openGraph: {
+            title: post.title,
+            description: post.caption ?? undefined,
+            images: post.cover_image ? [post.cover_image] : [],
+        },
+    }
 }
 
 export default async function ProjectPage({ params }: Props) {
+    const { slug } = await params
     const supabase = createServerClient()
 
     const { data: post } = await supabase
         .from('posts')
         .select('*')
-        .eq('slug', params.slug)
+        .eq('slug', slug)
         .eq('status', 'published')
         .single()
 
@@ -25,20 +51,36 @@ export default async function ProjectPage({ params }: Props) {
         .order('position', { ascending: true })
 
     return (
-        <div>
+        <article>
             <div className="max-w-5xl mx-auto px-6 py-12">
                 <h1 className="text-3xl font-bold tracking-tight">{post.title}</h1>
                 {post.caption && (
                     <p className="mt-2 text-gray-600">{post.caption}</p>
                 )}
-            </div>
-            <div>
-                {sections?.map(section => (
-                    <div key={section.id}>
-                        {renderBlock(section)}
+                {post.published_at && (
+                    <p className="mt-2 text-sm text-gray-400">
+                        {new Date(post.published_at).toLocaleDateString()}
+                    </p>
+                )}
+                {post.tags && post.tags.length > 0 && (
+                    <div className="mt-4 flex flex-wrap gap-2">
+                        {post.tags.map((tag: string) => (
+                            <span
+                                key={tag}
+                                className="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full"
+                            >
+                                {tag}
+                            </span>
+                        ))}
                     </div>
-                ))}
+                )}
             </div>
-        </div>
+
+            {sections?.map(section => (
+                <div key={section.id}>
+                    {renderBlock(section)}
+                </div>
+            ))}
+        </article>
     )
 }
