@@ -74,12 +74,14 @@ export default function ProjectsPage() {
         <>
 
 
-            <LogoListBlock
-                config={{ title: '' }}
-                technologies={technologies}
-                selectedTechs={selectedTechs}
-                onTechClick={toggleTech}
-            />
+            <div className='bg-gray-500'>
+                <LogoListBlock
+                    config={{ title: '' }}
+                    technologies={technologies}
+                    selectedTechs={selectedTechs}
+                    onTechClick={toggleTech}
+                />
+            </div>
 
             <PillsBlock
                 config={{ title: '' }}

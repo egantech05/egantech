@@ -43,8 +43,8 @@ export default function LogoListBlock({
                                 <Image
                                     src={tech.logo_url}
                                     alt={tech.name}
-                                    width={32}
-                                    height={32}
+                                    width={48}
+                                    height={48}
                                     className={`object-contain transition-all ${isInteractive && selectedTechs.includes(tech.id)
                                         ? 'grayscale-0'
                                         : isInteractive
