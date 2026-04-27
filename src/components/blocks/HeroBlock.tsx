@@ -25,7 +25,7 @@ export default function HeroBlock({ config }: { config: Section['config'] }) {
         >
             {/* dark overlay when background image is present */}
             {background_image && (
-                <div className="absolute inset-0" />
+                <div className="absolute inset-0 bg-white/50" />
             )}
 
             <div className="max-w-5xl mx-auto relative z-10">
