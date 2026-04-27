@@ -2,6 +2,7 @@ import HeroBlock from '@/components/blocks/HeroBlock'
 import LogoListBlock from '@/components/blocks/LogoListBlock'
 import PillsBlock from '@/components/blocks/PillsBlock'
 import CardGridBlock from '@/components/blocks/CardGridBlock'
+import ContactBlock from '@/components/blocks/ContactBlock'
 import { createServerClient } from '@/lib/supabase/server'
 import Link from 'next/link'
 
@@ -54,6 +55,15 @@ export default async function Home() {
         >
           View more
         </Link>
+      </div>
+
+      <div className="max-w-5xl mx-auto px-6 pb-16 flex justify-center">
+        <ContactBlock
+          config={{
+            heading: 'Get in touch',
+            subheading: 'Have a project in mind or just want to say hello?',
+          }}
+        />
       </div>
     </>
   )
