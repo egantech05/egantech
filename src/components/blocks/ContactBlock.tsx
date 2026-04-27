@@ -54,7 +54,6 @@ export default function ContactBlock({ config }: { config: Section['config'] }) 
                 {success ? (
                     <div className="mt-8 p-6 bg-green-50 border border-green-100 rounded-lg text-center">
                         <p className="text-green-700 font-medium">Message sent successfully.</p>
-                        <p className="text-green-600 text-sm mt-1">I will get back to you soon.</p>
                         <button
                             onClick={() => setSuccess(false)}
                             className="mt-4 text-sm text-green-600 underline hover:text-green-800"
@@ -75,7 +74,7 @@ export default function ContactBlock({ config }: { config: Section['config'] }) 
                                 onChange={e => setName(e.target.value)}
                                 required
                                 placeholder="Your name"
-                                className="px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                                className="px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 bg-white"
                             />
                         </div>
                         <div className="flex flex-col gap-1">
@@ -86,7 +85,7 @@ export default function ContactBlock({ config }: { config: Section['config'] }) 
                                 onChange={e => setEmail(e.target.value)}
                                 required
                                 placeholder="your@email.com"
-                                className="px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                                className="px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 bg-white"
                             />
                         </div>
                         <div className="flex flex-col gap-1">
@@ -97,7 +96,7 @@ export default function ContactBlock({ config }: { config: Section['config'] }) 
                                 required
                                 rows={5}
                                 placeholder="What would you like to say?"
-                                className="px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 resize-none"
+                                className="px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 resize-none bg-white"
                             />
                         </div>
                         <button

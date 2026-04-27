@@ -25,7 +25,7 @@ export default function CardGridBlock({
                         <Link
                             key={post.id}
                             href={`/projects/${post.slug}`}
-                            className="group border border-gray-200 rounded-lg overflow-hidden hover:border-gray-400 transition-colors"
+                            className="group border border-gray-200 rounded-lg overflow-hidden hover:border-gray-400 transition-colors bg-white"
                         >
                             {post.cover_image ? (
                                 <div className="relative aspect-video bg-gray-100">
