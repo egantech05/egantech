@@ -27,7 +27,14 @@ export default async function Home() {
     : []
 
   return (
-    <>
+    <div
+      style={{
+        backgroundImage: "url('/images/hero.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        backgroundRepeat: 'no-repeat',
+      }}>
       <section className="w-full px-6 relative flex items-center" style={{ minHeight: '750px' }}>
         <div className="max-w-5xl mx-auto">
           <Image
@@ -75,6 +82,6 @@ export default async function Home() {
           }}
         />
       </div>
-    </>
+    </div>
   )
 }
