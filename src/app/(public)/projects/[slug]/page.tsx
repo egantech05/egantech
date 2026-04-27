@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 
 type Props = {
     params: Promise<{ slug: string }>
+    searchParams: Promise<{ preview?: string }>
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -15,13 +16,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         .from('posts')
         .select('title, caption, cover_image')
         .eq('slug', slug)
-        .eq('status', 'published')
         .single()
 
     if (!post) return {}
 
     return {
-        title: `${post.title} | gantech`,
+        title: `${post.title} | egantech`,
         description: post.caption ?? undefined,
         openGraph: {
             title: post.title,
@@ -31,16 +31,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 }
 
-export default async function ProjectPage({ params }: Props) {
+export default async function ProjectPage({ params, searchParams }: Props) {
     const { slug } = await params
+    const { preview } = await searchParams
+    const isPreview = preview === 'true'
     const supabase = createServerClient()
 
-    const { data: post } = await supabase
+    const query = supabase
         .from('posts')
         .select('*')
         .eq('slug', slug)
-        .eq('status', 'published')
-        .single()
+
+    if (!isPreview) {
+        query.eq('status', 'published')
+    }
+
+    const { data: post } = await query.single()
 
     if (!post) notFound()
 
@@ -52,6 +58,12 @@ export default async function ProjectPage({ params }: Props) {
 
     return (
         <article>
+            {isPreview && (
+                <div className="w-full bg-yellow-400 text-yellow-900 text-sm font-medium text-center py-2 px-4">
+                    Preview mode — this post is not published yet
+                </div>
+            )}
+
             <div className="max-w-5xl mx-auto px-6 py-12">
                 <h1 className="text-3xl font-bold tracking-tight">{post.title}</h1>
                 {post.caption && (
