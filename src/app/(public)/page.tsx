@@ -38,6 +38,7 @@ export default async function Home() {
         <LogoListBlock
           config={{ title: '' }}
           technologies={technologies ?? []}
+          align="center"
         />
       </div>
       <PillsBlock

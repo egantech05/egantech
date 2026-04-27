@@ -100,7 +100,9 @@ export default function ProjectsPage() {
                     </button>
                 </div>
             ) : null}
-
+            <div className="max-w-5xl mx-auto">
+                <p className="text-sm text-gray-500 mb-4">Select tech stack or topics to filter out.</p>
+            </div>
             <CardGridBlock
                 config={{ count: filteredPosts.length }}
                 posts={filteredPosts}

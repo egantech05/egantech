@@ -10,22 +10,27 @@ export default function LogoListBlock({
     technologies = [],
     selectedTechs = [],
     onTechClick,
+    className = '',
+    align = 'left',
 }: {
     config: Section['config']
     technologies?: Technology[]
     selectedTechs?: string[]
     onTechClick?: (id: string) => void
+    className?: string
+    align?: 'left' | 'center'
 }) {
     const { title } = config as unknown as LogoListBlockConfig
     const isInteractive = !!onTechClick
 
     return (
-        <section className="w-full py-8 px-6 ">
+        <section className={`w-full py-8 px-6 border-b border-gray-100 ${className}`}>
             <div className="max-w-5xl mx-auto">
                 {title && (
                     <p className="text-sm text-gray-500 mb-4">{title}</p>
                 )}
-                <div className="flex items-center gap-6 flex-wrap">
+                <div className={`flex items-center gap-6 flex-wrap ${align === 'center' ? 'justify-center' : 'justify-start'
+                    }`}>
                     {technologies.length === 0 && (
                         <p className="text-sm text-gray-400">No technologies yet</p>
                     )}
@@ -40,22 +45,25 @@ export default function LogoListBlock({
                                 }`}
                         >
                             {tech.logo_url ? (
-                                <Image
-                                    src={tech.logo_url}
-                                    alt={tech.name}
-                                    width={48}
-                                    height={48}
-                                    className={`object-contain transition-all ${isInteractive && selectedTechs.includes(tech.id)
-                                        ? 'grayscale-0'
-                                        : isInteractive
-                                            ? 'grayscale hover:grayscale-0'
-                                            : 'grayscale'
-                                        }`}
-                                />
+                                <div className="relative h-8 w-auto">
+                                    <Image
+                                        src={tech.logo_url}
+                                        alt={tech.name}
+                                        height={32}
+                                        width={0}
+                                        sizes="100vw"
+                                        className={`h-8 w-auto object-contain transition-all ${isInteractive && selectedTechs.includes(tech.id)
+                                                ? 'grayscale-0'
+                                                : isInteractive
+                                                    ? 'grayscale hover:grayscale-0'
+                                                    : 'grayscale'
+                                            }`}
+                                    />
+                                </div>
                             ) : (
                                 <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium transition-colors ${isInteractive && selectedTechs.includes(tech.id)
-                                    ? 'bg-gray-900 text-white'
-                                    : 'bg-gray-200 text-gray-500'
+                                        ? 'bg-gray-900 text-white'
+                                        : 'bg-gray-200 text-gray-500'
                                     }`}>
                                     {tech.name.charAt(0).toUpperCase()}
                                 </div>
