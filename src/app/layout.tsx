@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'Egantech',
   description: '',
   icons: {
-    icon: '/Egan.svg',
+    icon: '/favicon.ico',
   },
 }
 
