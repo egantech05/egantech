@@ -28,7 +28,7 @@ export default async function Home() {
 
   return (
     <>
-      <section className="w-full px-6 relative flex items-center" style={{ minHeight: '500px' }}>
+      <section className="w-full px-6 relative flex items-center" style={{ minHeight: '750px' }}>
         <div className="max-w-5xl mx-auto">
           <Image
             src="/images/Egancece.png"
