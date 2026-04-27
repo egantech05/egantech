@@ -19,5 +19,14 @@
         background-position: center;
         background-attachment: fixed;
         background-repeat: no-repeat;
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE/Edge */
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari */
     }
 }
