@@ -5,6 +5,7 @@ import CardGridBlock from '@/components/blocks/CardGridBlock'
 import ContactBlock from '@/components/blocks/ContactBlock'
 import { createServerClient } from '@/lib/supabase/server'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default async function Home() {
   const supabase = createServerClient()
@@ -27,13 +28,21 @@ export default async function Home() {
 
   return (
     <>
-      <HeroBlock
-        config={{
-          use_logo: true,
-          subheading: 'Developer . Innovator . Explorer',
-          min_height: '500px',
-        }}
-      />
+      <section className="w-full px-6 relative flex items-center" style={{ minHeight: '500px' }}>
+        <div className="max-w-5xl mx-auto">
+          <Image
+            src="/images/Egancece.png"
+            alt="egantech"
+            width={400}
+            height={83}
+            className="w-auto h-16"
+            priority
+          />
+          <p className="text-xl font-bold mt-4 text-gray-600">
+            Developer . Innovator . Explorer
+          </p>
+        </div>
+      </section>
       <div className='bg-gray-500'>
         <LogoListBlock
           config={{ title: '' }}

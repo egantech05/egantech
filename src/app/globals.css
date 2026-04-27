@@ -12,4 +12,12 @@
     html {
         scroll-behavior: smooth;
     }
+
+    body {
+        background-image: url('/images/hero.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
 }

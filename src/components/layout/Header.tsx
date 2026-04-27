@@ -9,7 +9,7 @@ export default function Header() {
         <header className="w-full border-b border-gray-100">
             <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
                 <Link href="/">
-                    <Logo className="h-5 w-auto text-black" />
+                    <Logo className="h-5 w-auto text-gray-600" />
                 </Link>
                 <nav className="flex items-center gap-3">
                     <Link

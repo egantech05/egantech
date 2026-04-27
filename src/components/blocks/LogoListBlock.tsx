@@ -52,18 +52,19 @@ export default function LogoListBlock({
                                         height={32}
                                         width={0}
                                         sizes="100vw"
+                                        style={{ width: 'auto', height: '32px' }}
                                         className={`h-8 w-auto object-contain transition-all ${isInteractive && selectedTechs.includes(tech.id)
-                                                ? 'grayscale-0'
-                                                : isInteractive
-                                                    ? 'grayscale hover:grayscale-0'
-                                                    : 'grayscale'
+                                            ? 'grayscale-0'
+                                            : isInteractive
+                                                ? 'grayscale hover:grayscale-0'
+                                                : 'grayscale'
                                             }`}
                                     />
                                 </div>
                             ) : (
                                 <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium transition-colors ${isInteractive && selectedTechs.includes(tech.id)
-                                        ? 'bg-gray-900 text-white'
-                                        : 'bg-gray-200 text-gray-500'
+                                    ? 'bg-gray-900 text-white'
+                                    : 'bg-gray-200 text-gray-500'
                                     }`}>
                                     {tech.name.charAt(0).toUpperCase()}
                                 </div>
