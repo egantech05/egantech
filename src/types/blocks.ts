@@ -4,7 +4,7 @@ export type HeroBlockConfig = {
     subheading?: string
     background_image?: string
     background_color?: string
-
+    min_height?: string
 }
 
 export type RichTextBlockConfig = {
