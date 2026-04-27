@@ -4,7 +4,7 @@ export type HeroBlockConfig = {
     subheading?: string
     background_image?: string
     background_color?: string
-    min_height?: string
+
 }
 
 export type RichTextBlockConfig = {
@@ -31,4 +31,9 @@ export type LogoListBlockConfig = {
 
 export type PillsBlockConfig = {
     title: string
+}
+
+export type ContactBlockConfig = {
+    heading?: string
+    subheading?: string
 }
