@@ -1,6 +1,8 @@
 @import "tailwindcss";
+@import "@tailwindcss/typography";
 @source "(cms)/**/*.{ts,tsx}";
 @source "../components/cms/**/*.{ts,tsx}";
+
 
 @layer base {
     * {
