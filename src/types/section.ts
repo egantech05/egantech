@@ -4,5 +4,6 @@ export type Section = {
     position: number
     block_type: string
     config: Record<string, unknown>
+    above_header: boolean
     created_at: string
 }

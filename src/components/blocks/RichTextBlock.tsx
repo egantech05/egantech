@@ -7,8 +7,10 @@ export default function RichTextBlock({ config }: { config: Section['config'] })
 
     return (
         <section className="w-full py-8 px-6">
-            <div className="max-w-5xl mx-auto prose prose-gray max-w-none">
-                <ReactMarkdown>{content ?? ''}</ReactMarkdown>
+            <div className="max-w-5xl mx-auto">
+                <div className="prose prose-gray max-w-none">
+                    <ReactMarkdown>{content ?? ''}</ReactMarkdown>
+                </div>
             </div>
         </section>
     )

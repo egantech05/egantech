@@ -1,10 +1,6 @@
 export type HeroBlockConfig = {
-    use_logo?: boolean
-    heading?: string
-    subheading?: string
-    background_image?: string
-    background_color?: string
-    min_height?: string
+    image?: string
+    height?: number
 }
 
 export type RichTextBlockConfig = {
@@ -13,6 +9,8 @@ export type RichTextBlockConfig = {
 
 export type GalleryBlockConfig = {
     images: string[]
+    height?: number
+    width?: number
 }
 
 export type SplitViewBlockConfig = {
