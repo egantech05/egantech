@@ -8,7 +8,15 @@ export default function PublicLayout({
 }) {
     return (
         <div
-            className="min-h-screen flex flex-col">
+            className="min-h-screen flex flex-col"
+            style={{
+                backgroundImage: "url('/images/background2.gif')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundAttachment: 'fixed',
+                backgroundRepeat: 'no-repeat',
+            }}
+        >
             <Header />
             <main className="flex-1">
                 {children}

@@ -4,7 +4,7 @@ import LinkedInIcon from '@/components/ui/icons/LinkedInIcon'
 
 export default function Footer() {
     return (
-        <footer className="w-full border-t border-gray-100 py-8 px-6 mt-16">
+        <footer className="w-full py-8 px-6 mt-16">
             <div className="max-w-5xl mx-auto flex items-center justify-between">
                 <div className="flex items-center gap-2">
 

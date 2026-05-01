@@ -43,12 +43,12 @@ export default function ContactBlock({ config }: { config: Section['config'] }) 
         <section className="w-full py-16 px-6">
             <div className="max-w-xl mx-auto">
                 {heading && (
-                    <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+                    <h2 className="text-2xl font-bold tracking-tight text-gray-100">
                         {heading}
                     </h2>
                 )}
                 {subheading && (
-                    <p className="mt-2 text-gray-500">{subheading}</p>
+                    <p className="mt-2 text-gray-100">{subheading}</p>
                 )}
 
                 {success ? (
@@ -67,7 +67,7 @@ export default function ContactBlock({ config }: { config: Section['config'] }) 
                             <p className="text-sm text-red-500">{error}</p>
                         )}
                         <div className="flex flex-col gap-1">
-                            <label className="text-sm font-medium text-gray-700">Name</label>
+                            <label className="text-sm font-medium text-gray-100">Name</label>
                             <input
                                 type="text"
                                 value={name}
@@ -78,7 +78,7 @@ export default function ContactBlock({ config }: { config: Section['config'] }) 
                             />
                         </div>
                         <div className="flex flex-col gap-1">
-                            <label className="text-sm font-medium text-gray-700">Email</label>
+                            <label className="text-sm font-medium text-gray-100">Email</label>
                             <input
                                 type="email"
                                 value={email}
@@ -89,7 +89,7 @@ export default function ContactBlock({ config }: { config: Section['config'] }) 
                             />
                         </div>
                         <div className="flex flex-col gap-1">
-                            <label className="text-sm font-medium text-gray-700">Message</label>
+                            <label className="text-sm font-medium text-gray-100">Message</label>
                             <textarea
                                 value={message}
                                 onChange={e => setMessage(e.target.value)}
@@ -102,7 +102,7 @@ export default function ContactBlock({ config }: { config: Section['config'] }) 
                         <button
                             type="submit"
                             disabled={loading}
-                            className="px-6 py-2 bg-gray-900 text-white text-sm rounded-lg hover:bg-gray-700 transition-colors disabled:opacity-50 self-start"
+                            className="px-6 py-2 bg-gray-600 text-white text-sm rounded-lg hover:bg-gray-700 transition-colors disabled:opacity-50 self-start"
                         >
                             {loading ? 'Sending...' : 'Send Message'}
                         </button>

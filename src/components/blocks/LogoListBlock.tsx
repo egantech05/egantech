@@ -24,7 +24,7 @@ export default function LogoListBlock({
     const isInteractive = !!onTechClick
 
     return (
-        <section className={`w-full py-8 px-6 border-b border-gray-100 ${className}`}>
+        <section className={`w-full py-8 px-6 ${className}`}>
             <div className="max-w-5xl mx-auto">
                 {title && (
                     <p className="text-sm text-gray-500 mb-4">{title}</p>

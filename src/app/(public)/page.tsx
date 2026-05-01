@@ -27,15 +27,17 @@ export default async function Home() {
     : []
 
   return (
-    <div
-      style={{
-        backgroundImage: "url('/images/hero.png')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-        backgroundRepeat: 'no-repeat',
-      }}>
-      <section className="w-full px-6 relative flex items-center" style={{ minHeight: '750px' }}>
+    <div>
+      <section
+        className="w-full px-6 relative flex items-center"
+        style={{
+          minHeight: '750px',
+          backgroundImage: "url('/images/background.gif')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
         <div className="max-w-5xl mx-auto">
           <Image
             src="/images/Egancece.png"
@@ -45,12 +47,12 @@ export default async function Home() {
             className="w-auto h-16"
             priority
           />
-          <p className="text-xl font-bold mt-4 text-gray-600">
+          <p className="text-xl font-bold mt-4 text-black">
             Developer . Innovator . Explorer
           </p>
         </div>
       </section>
-      <div className='bg-gray-500'>
+      <div className='bg-gray-800'>
         <LogoListBlock
           config={{ title: '' }}
           technologies={technologies ?? []}
@@ -58,7 +60,7 @@ export default async function Home() {
         />
       </div>
       <PillsBlock
-        config={{ title: 'Topics' }}
+        config={{ title: '' }}
         tags={allTags}
       />
       <CardGridBlock
@@ -68,7 +70,7 @@ export default async function Home() {
       <div className="max-w-5xl mx-auto px-6 pb-16 flex justify-center">
         <Link
           href="/projects"
-          className="px-6 py-2 border border-gray-200 text-sm text-gray-600 rounded-lg hover:border-gray-900 hover:text-gray-900 transition-colors"
+          className="px-6 py-2 border border-gray-200 text-sm text-gray-100 rounded-lg hover:border-gray-900 hover:text-gray-900 transition-colors"
         >
           View more
         </Link>
