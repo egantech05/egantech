@@ -6,7 +6,7 @@ export default function RichTextBlock({ config }: { config: Section['config'] })
     const { content } = config as unknown as RichTextBlockConfig
 
     return (
-        <section className="w-full py-8">
+        <section className="w-full py-2">
             <div className="max-w-5xl mx-auto px-6">
                 <div className="
                 prose 

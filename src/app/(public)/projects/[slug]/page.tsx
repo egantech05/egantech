@@ -64,8 +64,6 @@ export default async function ProjectPage({ params, searchParams }: Props) {
             .in('id', post.technologies)
         : { data: [] }
 
-    const aboveSections = sections?.filter(s => s.above_header) ?? []
-    const belowSections = sections?.filter(s => !s.above_header) ?? []
 
     return (
         <article>
@@ -75,12 +73,18 @@ export default async function ProjectPage({ params, searchParams }: Props) {
                 </div>
             )}
 
-            {/* Sections above header */}
-            {aboveSections.map(section => (
-                <div key={section.id}>
-                    {renderBlock(section)}
+            {/* Cover image hero */}
+            {post.cover_image && (
+                <div className="w-full h-150 relative">
+                    <Image
+                        src={post.cover_image}
+                        alt={post.title}
+                        fill
+                        className="object-cover"
+                        priority
+                    />
                 </div>
-            ))}
+            )}
 
             {/* Post header */}
             <div className="max-w-5xl mx-auto px-6 py-12">
@@ -136,8 +140,8 @@ export default async function ProjectPage({ params, searchParams }: Props) {
                 )}
             </div>
 
-            {/* Sections below header */}
-            {belowSections.map(section => (
+            {/* All sections */}
+            {sections?.map(section => (
                 <div key={section.id}>
                     {renderBlock(section)}
                 </div>

@@ -12,7 +12,7 @@ export default function GalleryBlock({ config }: { config: Section['config'] }) 
     const hasWidth = !!width
 
     return (
-        <section className="w-full py-8 px-6">
+        <section className="w-full  px-6">
             <div className="max-w-5xl mx-auto">
                 {images.length === 1 ? (
                     <div className="overflow-hidden rounded-lg"
