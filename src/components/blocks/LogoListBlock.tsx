@@ -12,6 +12,7 @@ export default function LogoListBlock({
     onTechClick,
     className = '',
     align = 'left',
+    showTooltip = true,
 }: {
     config: Section['config']
     technologies?: Technology[]
@@ -19,6 +20,7 @@ export default function LogoListBlock({
     onTechClick?: (id: string) => void
     className?: string
     align?: 'left' | 'center'
+    showTooltip?: boolean
 }) {
     const { title } = config as unknown as LogoListBlockConfig
     const isInteractive = !!onTechClick
@@ -45,15 +47,12 @@ export default function LogoListBlock({
                                 }`}
                         >
                             {tech.logo_url ? (
-                                <div className="relative h-8 w-auto">
-                                    <Image
+                                <div className="relative">
+                                    <img
                                         src={tech.logo_url}
                                         alt={tech.name}
-                                        height={32}
-                                        width={0}
-                                        sizes="100vw"
-                                        style={{ width: 'auto', height: '32px' }}
-                                        className={`h-8 w-auto object-contain transition-all ${isInteractive && selectedTechs.includes(tech.id)
+                                        style={{ height: '32px', width: 'auto' }}
+                                        className={`object-contain transition-all ${isInteractive && selectedTechs.includes(tech.id)
                                             ? 'grayscale-0'
                                             : isInteractive
                                                 ? 'grayscale hover:grayscale-0'
@@ -71,9 +70,11 @@ export default function LogoListBlock({
                             )}
 
                             {/* Tooltip */}
-                            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
-                                {tech.name}
-                            </div>
+                            {showTooltip && (
+                                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
+                                    {tech.name}
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>

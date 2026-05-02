@@ -7,6 +7,9 @@ import { createServerClient } from '@/lib/supabase/server'
 import Link from 'next/link'
 import Image from 'next/image'
 
+
+
+
 export default async function Home() {
   const supabase = createServerClient()
 
@@ -28,16 +31,19 @@ export default async function Home() {
 
   return (
     <div>
+
       <section
-        className="w-full px-6 relative flex items-center"
+        className="px-6 relative flex items-center rounded-3xl overflow-hidden mx-4"
         style={{
           minHeight: '750px',
           backgroundImage: "url('/images/background.gif')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
           backgroundRepeat: 'no-repeat',
         }}
       >
+
         <div className="max-w-5xl mx-auto">
           <Image
             src="/images/Egancece.png"
@@ -52,11 +58,12 @@ export default async function Home() {
           </p>
         </div>
       </section>
-      <div className='bg-gray-800'>
+      <div className=''>
         <LogoListBlock
           config={{ title: '' }}
           technologies={technologies ?? []}
           align="center"
+          showTooltip={false}
         />
       </div>
       <PillsBlock
@@ -84,6 +91,8 @@ export default async function Home() {
           }}
         />
       </div>
+
+
     </div>
   )
 }

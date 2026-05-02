@@ -86,11 +86,12 @@ export default async function ProjectPage({ params, searchParams }: Props) {
             <div className="max-w-5xl mx-auto px-6 py-12">
                 <h1 className="text-3xl font-bold tracking-tight">{post.title}</h1>
                 {post.caption && (
-                    <p className="mt-2 text-gray-600">{post.caption}</p>
+                    <p className="mt-2 text-gray-400">{post.caption}</p>
                 )}
                 {post.published_at && (
                     <p className="mt-2 text-sm text-gray-400">
-                        {new Date(post.published_at).toLocaleDateString()}
+                        {new Date(post.published_at).toLocaleDateString('en-GB').replace(/\//g, '.')}
+
                     </p>
                 )}
 
@@ -99,7 +100,7 @@ export default async function ProjectPage({ params, searchParams }: Props) {
                         {post.tags.map((tag: string) => (
                             <span
                                 key={tag}
-                                className="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full"
+                                className="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full"
                             >
                                 {tag}
                             </span>
@@ -122,7 +123,7 @@ export default async function ProjectPage({ params, searchParams }: Props) {
                                         className="object-contain grayscale"
                                     />
                                 ) : (
-                                    <div className="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center text-xs text-gray-500">
+                                    <div className="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center text-xs text-gray-200">
                                         {tech.name.charAt(0).toUpperCase()}
                                     </div>
                                 )}

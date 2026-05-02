@@ -60,7 +60,7 @@ export default function CardGridBlock({
                                 )}
                                 {post.published_at && (
                                     <p className="mt-2 text-xs text-gray-400">
-                                        {new Date(post.published_at).toLocaleDateString()}
+                                        {new Date(post.published_at).toLocaleDateString('en-GB').replace(/\//g, '.')}
                                     </p>
                                 )}
                             </div>

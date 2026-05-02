@@ -6,9 +6,15 @@ export default function RichTextBlock({ config }: { config: Section['config'] })
     const { content } = config as unknown as RichTextBlockConfig
 
     return (
-        <section className="w-full py-8 px-6">
-            <div className="max-w-5xl mx-auto">
-                <div className="prose prose-gray max-w-none">
+        <section className="w-full py-8">
+            <div className="max-w-5xl mx-auto px-6">
+                <div className="
+                prose 
+                prose-gray 
+                max-w-none
+                prose-p:text-gray-300
+                prose-headings:text-gray-200
+                ">
                     <ReactMarkdown>{content ?? ''}</ReactMarkdown>
                 </div>
             </div>

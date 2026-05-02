@@ -72,9 +72,7 @@ export default function ProjectsPage() {
 
     return (
         <>
-
-
-            <div className='bg-gray-500'>
+            <div className=''>
                 <LogoListBlock
                     config={{ title: '' }}
                     technologies={technologies}
@@ -94,7 +92,7 @@ export default function ProjectsPage() {
                 <div className="max-w-5xl mx-auto px-6 pb-2">
                     <button
                         onClick={() => { setSelectedTags([]); setSelectedTechs([]) }}
-                        className="text-xs text-gray-400 hover:text-gray-700 transition-colors"
+                        className="text-xs text-gray-400 hover:text-gray-100 transition-colors"
                     >
                         Clear filters
                     </button>

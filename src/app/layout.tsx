@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { Analytics } from '@vercel/analytics/react'
 
+
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -23,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className=" text-gray-900 font-sans antialiased">
+      <body className=" text-zinc-200 font-sans antialiased bg-zinc-800">
         {children}
         <Analytics />
       </body>
