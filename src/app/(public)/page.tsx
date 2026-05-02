@@ -15,7 +15,7 @@ export default async function Home() {
 
   const { data: allPostTechs } = await supabase
     .from('posts')
-    .select('technologies')
+    .select('technologies, tags')
     .eq('status', 'published')
 
   const { data: posts } = await supabase
@@ -30,9 +30,18 @@ export default async function Home() {
     .select('*')
     .order('name')
 
-  const allTags = posts
-    ? [...new Set(posts.flatMap(post => post.tags ?? []))]
-    : []
+  const tagUsageCount = (allPostTechs ?? []).reduce<Record<string, number>>((acc, post) => {
+    (post.tags ?? []).forEach((tag: string) => {
+      acc[tag] = (acc[tag] ?? 0) + 1
+    })
+    return acc
+  }, {})
+
+  const allTags = Object.entries(tagUsageCount)
+    .sort((a, b) => b[1] - a[1])
+    .map(([tag]) => tag)
+
+
 
   const techUsageCount = (allPostTechs ?? []).reduce<Record<string, number>>((acc, post) => {
     (post.technologies ?? []).forEach((id: string) => {

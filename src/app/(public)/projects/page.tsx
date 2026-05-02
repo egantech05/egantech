@@ -38,7 +38,20 @@ export default function ProjectsPage() {
             setAllTags(tags)
         }
 
-        if (techsData) setTechnologies(techsData)
+        if (techsData && postsData) {
+            const usedTechIds = new Set(postsData.flatMap(p => p.technologies ?? []))
+            const usedTechCounts = postsData.reduce<Record<string, number>>((acc, post) => {
+                (post.technologies ?? []).forEach((id: string) => {
+                    acc[id] = (acc[id] ?? 0) + 1
+                })
+                return acc
+            }, {})
+            const filtered = techsData
+                .filter(t => usedTechIds.has(t.id))
+                .sort((a, b) => (usedTechCounts[b.id] ?? 0) - (usedTechCounts[a.id] ?? 0))
+            setTechnologies(filtered)
+        }
+
         setLoading(false)
     }
 
