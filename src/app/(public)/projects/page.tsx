@@ -34,8 +34,17 @@ export default function ProjectsPage() {
 
         if (postsData) {
             setPosts(postsData)
-            const tags = [...new Set(postsData.flatMap(p => p.tags ?? []))]
+            const tagCounts = postsData.reduce<Record<string, number>>((acc, post) => {
+                (post.tags ?? []).forEach((tag: string) => {
+                    acc[tag] = (acc[tag] ?? 0) + 1
+                })
+                return acc
+            }, {})
+            const tags = Object.entries(tagCounts)
+                .sort((a, b) => b[1] - a[1])
+                .map(([tag]) => tag)
             setAllTags(tags)
+
         }
 
         if (techsData && postsData) {
