@@ -13,6 +13,11 @@ import Image from 'next/image'
 export default async function Home() {
   const supabase = createServerClient()
 
+  const { data: allPostTechs } = await supabase
+    .from('posts')
+    .select('technologies')
+    .eq('status', 'published')
+
   const { data: posts } = await supabase
     .from('posts')
     .select('*')
@@ -28,6 +33,17 @@ export default async function Home() {
   const allTags = posts
     ? [...new Set(posts.flatMap(post => post.tags ?? []))]
     : []
+
+  const techUsageCount = (allPostTechs ?? []).reduce<Record<string, number>>((acc, post) => {
+    (post.technologies ?? []).forEach((id: string) => {
+      acc[id] = (acc[id] ?? 0) + 1
+    })
+    return acc
+  }, {})
+
+  const sortedTechnologies = [...(technologies ?? [])].sort(
+    (a, b) => (techUsageCount[b.id] ?? 0) - (techUsageCount[a.id] ?? 0)
+  )
 
   return (
     <div>
@@ -61,7 +77,7 @@ export default async function Home() {
       <div className=''>
         <LogoListBlock
           config={{ title: '' }}
-          technologies={technologies ?? []}
+          technologies={sortedTechnologies}
           align="center"
           showTooltip={false}
         />
