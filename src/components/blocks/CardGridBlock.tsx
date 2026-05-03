@@ -46,6 +46,11 @@ export default function CardGridBlock({
                                 {post.caption && (
                                     <p className="mt-1 text-xs text-gray-500 line-clamp-2">{post.caption}</p>
                                 )}
+                                {post.published_at && (
+                                    <p className="mt-2 text-xs text-gray-400">
+                                        {new Date(post.published_at).toLocaleDateString('en-GB').replace(/\//g, '.')}
+                                    </p>
+                                )}
                                 {post.tags && post.tags.length > 0 && (
                                     <div className="mt-3 flex flex-wrap gap-1">
                                         {post.tags.map(tag => (
@@ -58,11 +63,7 @@ export default function CardGridBlock({
                                         ))}
                                     </div>
                                 )}
-                                {post.published_at && (
-                                    <p className="mt-2 text-xs text-gray-400">
-                                        {new Date(post.published_at).toLocaleDateString('en-GB').replace(/\//g, '.')}
-                                    </p>
-                                )}
+
                             </div>
                         </Link>
                     ))}
