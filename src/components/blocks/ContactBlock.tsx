@@ -102,7 +102,7 @@ export default function ContactBlock({ config }: { config: Section['config'] }) 
                         <button
                             type="submit"
                             disabled={loading}
-                            className="px-6 py-2 bg-gray-600 text-white text-sm rounded-lg hover:bg-gray-700 transition-colors disabled:opacity-50 self-start"
+                            className="px-6 py-2 bg-gray-700 text-white text-sm rounded-lg hover:bg-gray-700 transition-colors disabled:opacity-50 self-start"
                         >
                             {loading ? 'Sending...' : 'Send Message'}
                         </button>
