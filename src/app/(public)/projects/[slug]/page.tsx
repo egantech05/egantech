@@ -3,6 +3,10 @@ import { renderBlock } from '@/components/blocks'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import GitHubIcon from '@/components/ui/icons/GitHubIcon'
+import WebIcon from '@/components/ui/icons/WebIcon'
+import Link from 'next/link'
+
 
 type Props = {
     params: Promise<{ slug: string }>
@@ -138,6 +142,26 @@ export default async function ProjectPage({ params, searchParams }: Props) {
                         ))}
                     </div>
                 )}
+
+                {(post.github_url || post.website_url) && (
+                    <div className="mt-4 flex flex-wrap gap-3">
+                        {post.github_url && (
+                            <Link href={post.github_url} target="_blank"
+                                className="flex items-center gap-2 px-4 py-2 text-sm border border-gray-200 rounded-lg hover:border-gray-900 transition-colors">
+                                <GitHubIcon className="h-4 w-4" />
+                                GitHub
+                            </Link>
+                        )}
+                        {post.website_url && (
+                            <Link href={post.website_url} target="_blank"
+                                className="flex items-center gap-2 px-4 py-2 text-sm border border-gray-200 rounded-lg hover:border-gray-900 transition-colors">
+                                <WebIcon className="h-4 w-4" />
+                                Visit Website
+                            </Link>
+                        )}
+                    </div>
+                )}
+
             </div>
 
             {/* All sections */}

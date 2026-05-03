@@ -9,6 +9,7 @@ import GalleryBlock from '@/components/blocks/GalleryBlock'
 import SplitViewBlock from '@/components/blocks/SplitViewBlock'
 import ContactBlock from '@/components/blocks/ContactBlock'
 
+
 export const blockRegistry: Record<string, React.ComponentType<{ config: Section['config'] }>> = {
     hero: HeroBlock,
     logo_list: LogoListBlock,
