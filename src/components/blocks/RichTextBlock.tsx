@@ -15,6 +15,8 @@ export default function RichTextBlock({ config }: { config: Section['config'] })
                 prose-p:text-gray-300
                 prose-headings:text-gray-200
                 prose-strong:text-gray-100
+                prose-ol:marker:text-gray-100
+                prose-ol:text-gray-100
                 ">
                     <ReactMarkdown>{content ?? ''}</ReactMarkdown>
                 </div>
