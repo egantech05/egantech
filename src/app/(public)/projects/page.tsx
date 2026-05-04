@@ -119,7 +119,7 @@ export default function ProjectsPage() {
                 <div className="max-w-5xl mx-auto px-6 pb-2">
                     <button
                         onClick={() => { setSelectedTags([]); setSelectedTechs([]) }}
-                        className="text-xs text-gray-400 hover:text-gray-100 transition-colors"
+                        className="lex items-center gap-2 px-4 py-2 text-xs text-gray-400 border border-gray-200 rounded-lg hover:text-gray-100 transition-colors"
                     >
                         Clear filters
                     </button>

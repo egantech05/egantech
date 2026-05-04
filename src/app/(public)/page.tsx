@@ -8,7 +8,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 
-
+export const dynamic = 'force-dynamic'
 
 export default async function Home() {
   const supabase = createServerClient()
@@ -23,7 +23,7 @@ export default async function Home() {
     .select('*')
     .eq('status', 'published')
     .order('published_at', { ascending: false })
-    .limit(3)
+    .limit(5)
 
   const { data: technologies } = await supabase
     .from('technologies')
@@ -96,7 +96,7 @@ export default async function Home() {
         tags={allTags}
       />
       <CardGridBlock
-        config={{ count: 3 }}
+        config={{ count: 5 }}
         posts={posts ?? []}
       />
       <div className="max-w-5xl mx-auto px-6 pb-16 flex justify-center">
