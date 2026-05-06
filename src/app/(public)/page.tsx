@@ -23,7 +23,7 @@ export default async function Home() {
     .select('*')
     .eq('status', 'published')
     .order('published_at', { ascending: false })
-    .limit(5)
+    .limit(6)
 
   const { data: technologies } = await supabase
     .from('technologies')
@@ -96,7 +96,7 @@ export default async function Home() {
         tags={allTags}
       />
       <CardGridBlock
-        config={{ count: 5 }}
+        config={{ count: 6 }}
         posts={posts ?? []}
       />
       <div className="max-w-5xl mx-auto px-6 pb-16 flex justify-center">
