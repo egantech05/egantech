@@ -102,7 +102,7 @@ export default async function Home() {
       <div className="max-w-5xl mx-auto px-6 pb-16 flex justify-center">
         <Link
           href="/projects"
-          className="px-6 py-2 border border-gray-200 text-sm text-gray-100 rounded-lg hover:border-gray-900 hover:text-gray-900 transition-colors"
+          className="px-6 py-2 border border-gray-200 text-sm text-gray-100 rounded-lg hover:bg-gray-300 hover:text-gray-900 transition-colors"
         >
           View more
         </Link>

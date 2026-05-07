@@ -74,7 +74,7 @@ export default function ContactBlock({ config }: { config: Section['config'] }) 
                                 onChange={e => setName(e.target.value)}
                                 required
                                 placeholder="Your name"
-                                className="px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 bg-white"
+                                className="px-4 py-2 inputText-dark border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 bg-white"
                             />
                         </div>
                         <div className="flex flex-col gap-1">
@@ -85,7 +85,7 @@ export default function ContactBlock({ config }: { config: Section['config'] }) 
                                 onChange={e => setEmail(e.target.value)}
                                 required
                                 placeholder="your@email.com"
-                                className="px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 bg-white"
+                                className="px-4 py-2 inputText-dark border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 bg-white"
                             />
                         </div>
                         <div className="flex flex-col gap-1">
@@ -96,13 +96,13 @@ export default function ContactBlock({ config }: { config: Section['config'] }) 
                                 required
                                 rows={5}
                                 placeholder="What would you like to say?"
-                                className="px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 resize-none bg-white"
+                                className="px-4 py-2 inputText-dark border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 resize-none bg-white"
                             />
                         </div>
                         <button
                             type="submit"
                             disabled={loading}
-                            className="px-6 py-2 bg-gray-700 text-white text-sm rounded-lg hover:bg-gray-700 transition-colors disabled:opacity-50 self-start"
+                            className="px-6 py-2 border border-gray-200 text-sm text-gray-100 rounded-lg hover:bg-gray-300 hover:text-gray-900 transition-colors"
                         >
                             {loading ? 'Sending...' : 'Send Message'}
                         </button>
