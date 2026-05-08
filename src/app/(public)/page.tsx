@@ -6,6 +6,7 @@ import ContactBlock from '@/components/blocks/ContactBlock'
 import { createServerClient } from '@/lib/supabase/server'
 import Link from 'next/link'
 import Image from 'next/image'
+import Animation from '@/components/ui/Animation'
 
 
 export const dynamic = 'force-dynamic'
@@ -70,35 +71,46 @@ export default async function Home() {
       >
 
         <div className="max-w-5xl mx-auto">
-          <Image
-            src="/images/Egancece.png"
-            alt="egantech"
-            width={400}
-            height={83}
-            className="w-auto h-16"
-            priority
-          />
-          <p className="text-xl font-bold mt-4 text-black">
-            Developer . Innovator . Explorer
-          </p>
+          <Animation type="fade" delay={100} duration={3000}>
+            <Image
+              src="/images/Egancece.png"
+              alt="egantech"
+              width={400}
+              height={83}
+              className="w-auto h-16"
+              priority
+            />
+
+            <p className="text-xl font-bold mt-4 text-black">
+              Developer . Innovator . Explorer
+            </p>
+          </Animation>
         </div>
       </section>
       <div className=''>
-        <LogoListBlock
-          config={{ title: '' }}
-          technologies={sortedTechnologies}
-          align="center"
-          showTooltip={false}
-        />
+        <Animation type="slideRight" delay={500} duration={3000}>
+          <LogoListBlock
+            config={{ title: '' }}
+            technologies={sortedTechnologies}
+            align="center"
+            showTooltip={false}
+          />
+        </Animation>
       </div>
-      <PillsBlock
-        config={{ title: '' }}
-        tags={allTags}
-      />
-      <CardGridBlock
-        config={{ count: 6 }}
-        posts={posts ?? []}
-      />
+      <Animation delay={500} duration={3000}>
+        <PillsBlock
+          config={{ title: '' }}
+          tags={allTags}
+        />
+      </Animation>
+
+      <Animation type="slideLeft" delay={500} duration={5000}>
+        <CardGridBlock
+          config={{ count: 6 }}
+          posts={posts ?? []}
+        />
+      </Animation>
+
       <div className="max-w-5xl mx-auto px-6 pb-16 flex justify-center">
         <Link
           href="/projects"
@@ -108,14 +120,17 @@ export default async function Home() {
         </Link>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 pb-16 flex justify-center">
-        <ContactBlock
-          config={{
-            heading: 'Get in touch',
-            subheading: 'Have a project in mind or just want to say hello?',
-          }}
-        />
-      </div>
+
+      <Animation duration={3000}>
+        <div className="max-w-5xl mx-auto px-6 pb-16 flex justify-center">
+          <ContactBlock
+            config={{
+              heading: 'Get in touch',
+              subheading: 'Have a project in mind or just want to say hello?',
+            }}
+          />
+        </div>
+      </Animation>
 
 
     </div>
