@@ -59,29 +59,46 @@ export default async function Home() {
   return (
     <div>
 
-      <section
-        className="px-6 relative flex items-center rounded-3xl overflow-hidden mx-4"
-        style={{
-          minHeight: '750px',
-          backgroundImage: "url('/images/background.gif')",
-          backgroundSize: 'contain',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-          backgroundRepeat: 'no-repeat',
-        }}
-      >
+      <section className="px-6 relative flex items-center rounded-3xl overflow-hidden mx-4" style={{ minHeight: '750px' }}>
 
-        <div className="max-w-5xl mx-auto flex flex-col justify-center items-center text-center">
+        <Animation type="fade" delay={0} duration={5000} className="absolute inset-0 z-[1]">
+          <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/heroBackground/background.png')", backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }} />
+        </Animation>
+        <Animation type="fade" delay={0} duration={5000} className="absolute inset-0 z-[8]">
+          <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/heroBackground/standing.png')", backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }} />
+        </Animation>
 
+        <Animation type="slideRight" delay={600} duration={5000} className="absolute inset-0 z-[6]">
+          <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/heroBackground/left.png')", backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }} />
+        </Animation>
+        <Animation type="slideLeft" delay={600} duration={5000} className="absolute inset-0 z-[7]">
+          <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/heroBackground/right.png')", backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }} />
+        </Animation>
+        <Animation type="fade" delay={2000} duration={5000} className="absolute inset-0 z-[2]">
+          <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/heroBackground/aki.png')", backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }} />
+        </Animation>
+
+        <Animation type="slideRight" delay={4000} duration={5000} className="absolute inset-0 z-[5]">
+          <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/heroBackground/cloudtop.png')", backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }} />
+        </Animation>
+        <Animation type="slideLeft" delay={4000} duration={5000} className="absolute inset-0 z-[4]">
+          <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/heroBackground/cloudmid.png')", backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }} />
+        </Animation>
+        <Animation type="slideRight" delay={4000} duration={5000} className="absolute inset-0 z-[3]">
+          <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/heroBackground/cloudbottom.png')", backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }} />
+        </Animation>
+        {/* Content on top */}
+        <div className="relative max-w-5xl mx-auto flex flex-col justify-center items-center text-center" style={{ zIndex: 10 }}>
           <Animation type="fade" delay={100} duration={3000}>
-            <Logo className=" w-auto text-zinc-800 " />
-
+            <Logo className="w-auto text-zinc-800" />
             <p className="text-xl font-bold mt-4 text-zinc-800">
               Developer . Innovator . Explorer
             </p>
           </Animation>
         </div>
+
       </section>
+
       <div className=''>
         <Animation type="slideRight" delay={500} duration={3000}>
           <LogoListBlock
