@@ -90,7 +90,7 @@ export default async function Home() {
         {/* Content on top */}
         <div className="relative max-w-5xl mx-auto flex flex-col justify-center items-center text-center" style={{ zIndex: 10 }}>
           <Animation type="fade" delay={100} duration={3000}>
-            <Logo className="w-auto text-zinc-200" />
+            <Logo className="w-auto text-zinc-800" />
             <p className="text-xl font-bold mt-4 text-zinc-800">
               Developer . Innovator . Explorer
             </p>
