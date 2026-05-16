@@ -2,13 +2,15 @@
 
 import { useEffect, useRef, useState } from 'react'
 
-type AnimationType = 'fade' | 'slideLeft' | 'slideRight'
+type AnimationType = 'fade' | 'slideLeft' | 'slideRight' | 'fadeOnly'
+
 
 const getInitialTransform = (type: AnimationType) => {
     switch (type) {
         case 'slideRight': return 'translateX(-40px)'
         case 'slideLeft': return 'translateX(40px)'
         case 'fade': return 'translateY(20px)'
+        case 'fadeOnly': return 'none'
     }
 }
 
@@ -49,9 +51,10 @@ export default function Animation({
             className={className}
             style={{
                 opacity: visible ? 1 : 0,
-                transform: visible ? 'translate(0)' : getInitialTransform(type),
-                transition: `opacity ${duration}ms ease ${delay}ms, transform ${duration}ms ease ${delay}ms`,
+                transform: type === 'fadeOnly' ? 'none' : (visible ? 'translate(0)' : getInitialTransform(type)),
+                transition: `opacity ${duration}ms ease ${delay}ms${type !== 'fadeOnly' ? `, transform ${duration}ms ease ${delay}ms` : ''}`,
             }}
+
         >
             {children}
         </div>
