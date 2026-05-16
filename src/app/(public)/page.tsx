@@ -71,7 +71,7 @@ export default async function Home() {
         <Animation type="slideRight" delay={600} duration={5000} className="absolute inset-0 z-[6]">
           <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/heroBackground/left.png')", backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }} />
         </Animation>
-        <Animation type="slideLeft" delay={600} duration={5000} className="absolute inset-0 z-[7]">
+        <Animation type="slideLeft" delay={600} duration={4000} className="absolute inset-0 z-[7]">
           <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/heroBackground/right.png')", backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }} />
         </Animation>
         <Animation type="fade" delay={2000} duration={5000} className="absolute inset-0 z-[2]">
@@ -90,8 +90,8 @@ export default async function Home() {
         {/* Content on top */}
         <div className="relative max-w-5xl mx-auto flex flex-col justify-center items-center text-center" style={{ zIndex: 10 }}>
           <Animation type="fade" delay={100} duration={3000}>
-            <Logo className="w-auto text-zinc-800" />
-            <p className="text-xl font-bold mt-4 text-zinc-800">
+            <Logo className="w-auto text-zinc-200" />
+            <p className="text-xl font-bold mt-4 text-zinc-200">
               Developer . Innovator . Explorer
             </p>
           </Animation>
