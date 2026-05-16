@@ -64,7 +64,7 @@ export default async function Home() {
         style={{
           minHeight: '750px',
           backgroundImage: "url('/images/background.gif')",
-          backgroundSize: 'cover',
+          backgroundSize: 'contain',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
           backgroundRepeat: 'no-repeat',
