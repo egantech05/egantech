@@ -7,6 +7,7 @@ import { createServerClient } from '@/lib/supabase/server'
 import Link from 'next/link'
 import Image from 'next/image'
 import Animation from '@/components/ui/Animation'
+import Logo from '@/components/ui/EgantechLogo'
 
 
 export const dynamic = 'force-dynamic'
@@ -70,18 +71,12 @@ export default async function Home() {
         }}
       >
 
-        <div className="max-w-5xl mx-auto">
-          <Animation type="fade" delay={100} duration={3000}>
-            <Image
-              src="/images/Egancece.png"
-              alt="egantech"
-              width={400}
-              height={83}
-              className="w-auto h-16"
-              priority
-            />
+        <div className="max-w-5xl mx-auto flex flex-col justify-center items-center text-center">
 
-            <p className="text-xl font-bold mt-4 text-black">
+          <Animation type="fade" delay={100} duration={3000}>
+            <Logo className=" w-auto text-zinc-800 " />
+
+            <p className="text-xl font-bold mt-4 text-zinc-800">
               Developer . Innovator . Explorer
             </p>
           </Animation>
