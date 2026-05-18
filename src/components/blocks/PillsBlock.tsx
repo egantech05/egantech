@@ -29,9 +29,9 @@ export default function PillsBlock({
                         <button
                             key={tag}
                             onClick={() => onTagClick?.(tag)}
-                            className={`px-3 py-1 rounded-full text-sm transition-colors ${selectedTags.includes(tag)
-                                ? 'bg-gray-900 text-white'
-                                : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                            className={`px-3 py-1 rounded-full text-sm transition-colors cursor-pointer  ${selectedTags.includes(tag)
+                                ? 'bg-gray-500 text-white'
+                                : 'bg-gray-100 text-gray-900 hover:bg-gray-500 hover:text-gray-100'
                                 }`}
                         >
                             {tag}
