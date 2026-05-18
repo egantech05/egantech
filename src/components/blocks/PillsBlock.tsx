@@ -31,8 +31,8 @@ export default function PillsBlock({
                             onClick={() => onTagClick?.(tag)}
 
                             className={`px-3 py-1 rounded-full text-sm transition-colors ${selectedTags.includes(tag)
-                                    ? 'bg-gray-900 text-white'
-                                    : 'bg-gray-100 text-gray-900'
+                                ? 'bg-gray-500 text-white'
+                                : 'bg-gray-100 text-gray-900'
                                 } ${onTagClick
                                     ? 'cursor-pointer hover:bg-gray-500 hover:text-gray-100'
                                     : 'cursor-default'
